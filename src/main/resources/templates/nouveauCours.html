@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tous les cours</title>
 </head>
 <body>
+<table border="1">
+    <th>code</th>
+    <th>intitule</th>
 
+    <tr>
+        <td th:text="${nouvcour.code}"/>
+        <td th:text="${nouvcour.intitule}"/>
+    </tr>
+</table>
+<a href ="/">retour</a>
 </body>
 </html>
