@@ -7,12 +7,14 @@
 </head>
 <body>
 <table border="1">
+    <th>ID</th>
     <th>code</th>
     <th>intitule</th>
 
     <tr>
-        <td th:text="${nouvcour.code}"/>
-        <td th:text="${nouvcour.intitule}"/>
+        <td th:text="${nouvcours.idCours}"/>
+        <td th:text="${nouvcours.code}"/>
+        <td th:text="${nouvcours.intitule}"/>
     </tr>
 </table>
 <a href ="/">retour</a>

@@ -12,8 +12,9 @@ public class Cours
 {
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cours_generator")
     @SequenceGenerator(name = "cours_generator", sequenceName = "EXO1_COURS_SEQ",allocationSize = 1)
+    private Integer idcours;
     @NonNull
-    private String  code;
+    private String code;
     @NonNull
     private String intitule;
 
