@@ -20,6 +20,7 @@ public class GestCours {
     @RequestMapping("/tous")
     public String seeAll(Map<String, Object> model) {
         try {
+            Cours c = new Cours();
             Collection<Cours> cours = coursServiceImpl.all();
             model.put("mesCours", cours);
         } catch (Exception e) {
@@ -27,7 +28,7 @@ public class GestCours {
             model.put("error", e.getMessage());
             return "error";
         }
-        return "affichertousCours";
+        return "affichageToutCours";
     }
     @RequestMapping("/read")
     public String read(@RequestParam int idCours, Map<String, Object> model){
@@ -40,7 +41,7 @@ public class GestCours {
             model.put("error",e.getMessage());
             return "error";
         }
-        return "affEmploye";
+        return "affichageCours";
     }
 
     @RequestMapping("/create")

@@ -11,9 +11,9 @@
     <th>CODECOURS</th>
     <th>INTITULECOURS</th>
     <tr th:each="unCours : ${mesCours}">
-        <td th:text="${nouvcours.idCours}"/>
-        <td th:text="${nouvcours.code}"/>
-        <td th:text="${nouvcours.intitule}"/>
+        <td th:text="${mesCours.idcours}"/>
+        <td th:text="${mesCours.code}"/>
+        <td th:text="${mesCours.intitule}"/>
 
     </tr>
 </table>
