@@ -1,6 +1,6 @@
-package services;
+package be.condorcet.services;
 
-import entities.Cours;
+import be.condorcet.entities.Cours;
 
 import java.util.List;
 

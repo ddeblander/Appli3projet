@@ -1,7 +1,7 @@
-package services;
+package be.condorcet.services;
 
-import be.condorcet.appli3Projet.repositories.CoursRepository;
-import entities.Cours;
+import be.condorcet.repositories.CoursRepository;
+import be.condorcet.entities.Cours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +15,8 @@ public class CoursServiceImpl implements InterfCoursService{
     @Autowired
     private CoursRepository coursRepository;
     @Override
-    public List<Cours> read(String nom) {
-        return coursRepository.findByNomLike(nom+"%");
+    public List<Cours> read(String intitule) {
+        return coursRepository.findByIntituleLike(intitule+"%");
     }
     @Override
     public Cours create(Cours cours) throws Exception {

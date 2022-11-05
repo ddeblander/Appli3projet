@@ -1,4 +1,4 @@
-package be.condorcet.appli3Projet;
+package be.condorcet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

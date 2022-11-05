@@ -1,4 +1,4 @@
-package be.condorcet.appli3Projet;
+package be.condorcet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

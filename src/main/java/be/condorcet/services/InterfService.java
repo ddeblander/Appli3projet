@@ -1,4 +1,4 @@
-package services;
+package be.condorcet.services;
 import java.util.List;
 
 public interface InterfService<T>{

@@ -1,12 +1,12 @@
-package modele;
+package be.condorcet.modele;
 
 
-import entities.Cours;
+import be.condorcet.entities.Cours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import services.CoursServiceImpl;
+import be.condorcet.services.CoursServiceImpl;
 
 import java.util.Collection;
 import java.util.Map;

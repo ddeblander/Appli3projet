@@ -1,8 +1,9 @@
-package entities;
+package be.condorcet.entities;
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 @ToString
@@ -17,5 +18,6 @@ public class Cours
     private String code;
     @NonNull
     private String intitule;
+
 
 }
