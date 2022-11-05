@@ -1,6 +1,6 @@
 package services;
 
-import com.example.exercice1_1.repositories.CoursRepository;
+import be.condorcet.appli3Projet.repositories.CoursRepository;
 import entities.Cours;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +19,9 @@ public class CoursServiceImpl implements InterfCoursService{
         return coursRepository.findByNomLike(nom+"%");
     }
     @Override
-    public Cours create(Cours employe) throws Exception {
-        coursRepository.save(employe);
-        return employe;
+    public Cours create(Cours cours) throws Exception {
+        coursRepository.save(cours);
+        return cours;
     }
     @Override
     public Cours read(Integer id) throws Exception {

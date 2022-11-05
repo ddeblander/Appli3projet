@@ -1,4 +1,4 @@
-package com.example.exercice1_1.repositories;
+package be.condorcet.appli3Projet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

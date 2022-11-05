@@ -1,4 +1,4 @@
-package com.example.exercice1_1;
+package be.condorcet.appli3Projet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
