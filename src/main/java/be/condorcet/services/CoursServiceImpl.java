@@ -25,8 +25,9 @@ public class CoursServiceImpl implements InterfCoursService{
     }
     @Override
     public Cours read(Integer id) throws Exception {
-        Optional<Cours> oemp= coursRepository.findById(id);
-        return oemp.get();
+        Optional<Cours> oCours= coursRepository.findById(id);
+        return oCours.get();
+
     }
     @Override
     public Cours update(Cours cours) throws Exception {
