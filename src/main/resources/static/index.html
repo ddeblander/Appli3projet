@@ -5,19 +5,35 @@
     <title>ACCUEIL</title>
 </head>
 <body>
-<h1> bienvenue dans la gestion des cours </h1>
-<p><a href="cours/tous">voir tous les cours</a></p>
-<p><form action = "cours/create" method="get">
-    code : <input type = "text" name="code"> <br>
-    intitule : <input type = "text" name="intitule"> <br>
-    <input type="submit" name="ok" value="ok">
-</form>
-</p>
-<p><form action="cours/read" method="get">
-    idCours : <input type="text" name="code"><br>
-    <input type="submit" name="ok" value="ok">
+    <h1> bienvenue dans la gestion des cours </h1>
+    <p><a href="cours/tous">voir tous les cours</a></p>
+    <p><form action = "cours/create" method="get">
+        code : <input type = "text" name="code"> <br>
+        intitule : <input type = "text" name="intitule"> <br>
+        <input type="submit" name="ok" value="ok">
+    </form>
+    </p>
+    <p><form action="cours/read" method="get">
+        idCours : <input type="text" name="code"><br>
+        <input type="submit" name="ok" value="ok">
 
-</form>
-</p>
+    </form>
+    </p>
+    <h1> bienvenue dans la gestion des classes </h1>
+    <p><a href="mesClasses/tous">voir toutes les classes</a></p>
+    <p><form action = "classe/create" method="get">
+        sigle : <input type = "text" name="sigle"> <br>
+        annee : <input type = "number" name="annee"> <br>
+        specialite : <input type = "text" name="specialite"> <br>
+        nbEleves : <input type = "number" name="nbEleves"> <br>
+        <input type="submit" name="ok" value="ok">
+    </form>
+    </p>
+    <p><form action="maClasse/read" method="get">
+        idClasse : <input type="number" name="idClasse"><br>
+        <input type="submit" name="ok" value="ok">
+
+    </form>
+    </p>
 </body>
 </html>
