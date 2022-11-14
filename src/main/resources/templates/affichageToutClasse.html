@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Tous Clients</title>
+</head>
+<body>
+<table border="1">
+  <th>ID</th>
+  <th>SIGLE</th>
+  <th>ANNEE</th>
+  <th>SPECIALITE</th>
+  <th>NBELEVES</th>
+  <tr th:each="uneClasse : ${mesClasses}">
+    <td th:text="${uneClasse.id}"/>
+    <td th:text="${uneClasse.sigle}"/>
+    <td th:text="${uneClasse.annee}"/>
+    <td th:text="${uneClasse.specialite}"/>
+    <td th:text="${uneClasse.nbEleves}"/>
+
+  </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

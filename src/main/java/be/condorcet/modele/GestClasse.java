@@ -28,7 +28,7 @@ public class GestClasse
             model.put("error", e.getMessage());
             return "error";
         }
-        return "affichageToutCours";
+        return "affichageToutClasse";
     }
     @RequestMapping("/read")
     public String read(@RequestParam int idClasse, Map<String, Object> model){
