@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface InterfCoursService extends InterfService<Cours>{
     public List<Cours> read(String nom);
+    public Cours read(String code, String intitule);
 }
 

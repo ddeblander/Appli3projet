@@ -5,6 +5,8 @@ import be.condorcet.entities.Cours;
 import be.condorcet.repositories.ClasseRepository;
 import be.condorcet.repositories.CoursRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -44,5 +46,10 @@ public class ClasseServiceImpl implements InterfClasseService
     @Override
     public List<Classe> all() throws Exception {
         return classeRepository.findAll();
+    }
+
+    @Override
+    public Page<Classe> allp(Pageable pageable) throws Exception {
+        return classeRepository.findAll(pageable);
     }
 }
