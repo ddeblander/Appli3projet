@@ -11,8 +11,8 @@ import javax.persistence.*;
 public class Classe
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "classe_generator")
-    @SequenceGenerator(name = "classe_generator", sequenceName = "EXO1_CLASSES_SEQ",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "classes_generator")
+    @SequenceGenerator(name = "classes_generator", sequenceName = "CLASSES_GENERATOR",allocationSize = 1)
     @Column(name = "ID")
     private Integer id;
 

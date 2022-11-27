@@ -1,6 +1,7 @@
 package be.condorcet.modele;
 
 import be.condorcet.entities.Classe;
+import be.condorcet.entities.Salle;
 import be.condorcet.services.ClasseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,9 +46,9 @@ public class GestClasse
     }
 
     @RequestMapping("/create")
-    public String create(@RequestParam String sigle, @RequestParam int annee, @RequestParam String specialite, @RequestParam int nbEleves,@RequestParam int idSalle, Map<String, Object> model) {
+    public String create(@RequestParam String sigle, @RequestParam int annee, @RequestParam String specialite, @RequestParam int nbEleves, @RequestParam Salle salle, Map<String, Object> model) {
         System.out.println("création de classe ");
-        Classe c = new Classe(null,sigle,specialite,annee,nbEleves,idSalle);
+        Classe c = new Classe(null,sigle,specialite,annee,nbEleves,salle);
         try
         {
             classeServiceImpl.create(c);
@@ -85,7 +86,7 @@ public class GestClasse
 
     }
     @RequestMapping("/update")
-    public String update(@RequestParam int id,@RequestParam String sigle, @RequestParam String specialite, @RequestParam int annee, @RequestParam int nbEleves,@RequestParam int idSalle, Map<String, Object> model) {
+    public String update(@RequestParam int id,@RequestParam String sigle, @RequestParam String specialite, @RequestParam int annee, @RequestParam int nbEleves,@RequestParam Salle salle, Map<String, Object> model) {
         System.out.println("recherche du classe n° "+id);
         Classe c = new Classe();
         try
@@ -94,7 +95,7 @@ public class GestClasse
             c.setSigle(sigle);
             c.setSpecialite(specialite);
             c.setNbEleves(nbEleves);
-            c.setIdSalle(idSalle);
+            c.setSalle(salle);
             classeServiceImpl.update(c);
         }
         catch (Exception e)

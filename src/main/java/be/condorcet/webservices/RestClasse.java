@@ -41,7 +41,7 @@ public class RestClasse
     }
     //to retrieve the Classe with an sigle send
     @RequestMapping(value = "/sigle={sigle}", method = RequestMethod.GET)
-    public ResponseEntity<List<Classe>> listClassesNom(@PathVariable(value="nom") String sigle) throws Exception{
+    public ResponseEntity<List<Classe>> listClassesNom(@PathVariable(value="sigle") String sigle) throws Exception{
         System.out.println("recherche de "+sigle);
         List<Classe> classes;
         classes = ics.read(sigle);

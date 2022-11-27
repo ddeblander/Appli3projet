@@ -4,10 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Data @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
+/*//@Data @NoArgsConstructor @AllArgsConstructor @RequiredArgsConstructor
 @ToString
 @Entity
-@Table(name = "EXO1_INFOS", schema = "ORA47", catalog = "ORCL")
+@Table(name = "EXO1_INFOS", schema = "ORA47", catalog = "ORCL")*/
 public class Infos
 {
 /*  @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cours_generator")
@@ -16,8 +16,8 @@ public class Infos
     @NonNull
     private String code;
     @NonNull
-    private String intitule;*/
+    private String intitule;
 
     @Id
-    private Integer ID_classes,IDcours_cours;
+    private Integer ID_classes,IDcours_cours;*/
 }

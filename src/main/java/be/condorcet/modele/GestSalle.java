@@ -48,7 +48,7 @@ public class GestSalle
     @RequestMapping("/create")
     public String create(@RequestParam String sigle,@RequestParam int capacite, Map<String, Object> model) {
         System.out.println("création de classe ");
-        Salle c = new Salle(null,sigle,capacite);
+        Salle c = new Salle(null,sigle,capacite,null);
         try
         {
             SSI.create(c);
