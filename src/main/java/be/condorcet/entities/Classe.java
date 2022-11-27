@@ -28,4 +28,8 @@ public class Classe
     @NonNull
     @Column(name = "NBELEVES")
     private int nbEleves;
+    @NonNull
+    @ManyToOne
+    @JoinColumn(name = "ID_SALLE")
+    private Salle salle;
 }

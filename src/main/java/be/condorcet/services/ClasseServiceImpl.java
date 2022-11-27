@@ -23,6 +23,12 @@ public class ClasseServiceImpl implements InterfClasseService
     public List<Classe> read(String sigle) {
         return classeRepository.findBySigleLike(sigle+"%");
     }
+
+    @Override
+    public Classe read(int id, String sigle) {
+        return classeRepository.findByIdAndSigleLike(id,sigle);
+    }
+
     @Override
     public Classe create(Classe classe) throws Exception {
         classeRepository.save(classe);

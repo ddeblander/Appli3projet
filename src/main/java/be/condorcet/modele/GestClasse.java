@@ -45,9 +45,9 @@ public class GestClasse
     }
 
     @RequestMapping("/create")
-    public String create(@RequestParam String sigle, @RequestParam int annee, @RequestParam String specialite, @RequestParam int nbEleves, Map<String, Object> model) {
+    public String create(@RequestParam String sigle, @RequestParam int annee, @RequestParam String specialite, @RequestParam int nbEleves,@RequestParam int idSalle, Map<String, Object> model) {
         System.out.println("création de classe ");
-        Classe c = new Classe(null,sigle,specialite,annee,nbEleves);
+        Classe c = new Classe(null,sigle,specialite,annee,nbEleves,idSalle);
         try
         {
             classeServiceImpl.create(c);
@@ -85,7 +85,7 @@ public class GestClasse
 
     }
     @RequestMapping("/update")
-    public String update(@RequestParam int id,@RequestParam String sigle, @RequestParam String specialite, @RequestParam int annee, @RequestParam int nbEleves, Map<String, Object> model) {
+    public String update(@RequestParam int id,@RequestParam String sigle, @RequestParam String specialite, @RequestParam int annee, @RequestParam int nbEleves,@RequestParam int idSalle, Map<String, Object> model) {
         System.out.println("recherche du classe n° "+id);
         Classe c = new Classe();
         try
@@ -93,6 +93,8 @@ public class GestClasse
             c = classeServiceImpl.read(id);
             c.setSigle(sigle);
             c.setSpecialite(specialite);
+            c.setNbEleves(nbEleves);
+            c.setIdSalle(idSalle);
             classeServiceImpl.update(c);
         }
         catch (Exception e)

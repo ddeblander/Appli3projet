@@ -31,20 +31,20 @@ public class RestClasse
     @Autowired
     private InterfClasseService ics;
 
-    // to retrieve a cour with an ID send
+    // to retrieve a Classe with an ID send
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Cours> getCour(@PathVariable(value = "id")int id) throws Exception
+    public ResponseEntity<Classe> getClasse(@PathVariable(value = "id")int id) throws Exception
     {
         System.out.println("recherche du d'une Classe d' id " + id);
         Classe c = ics.read(id);
-        return new ResponseEntity<>(c, HttpStatus.OK);
+        return new ResponseEntity<Classe>(c, HttpStatus.OK);
     }
-    //to retrieve the cours with an INTITULE send
-    @RequestMapping(value = "/intitule={intitule}", method = RequestMethod.GET)
-    public ResponseEntity<List<Cours>> listCourssNom(@PathVariable(value="nom") String nom) throws Exception{
-        System.out.println("recherche de "+nom);
+    //to retrieve the Classe with an sigle send
+    @RequestMapping(value = "/sigle={sigle}", method = RequestMethod.GET)
+    public ResponseEntity<List<Classe>> listClassesNom(@PathVariable(value="nom") String sigle) throws Exception{
+        System.out.println("recherche de "+sigle);
         List<Classe> classes;
-        classes = ics.read(nom);
+        classes = ics.read(sigle);
         return new ResponseEntity<>(classes, HttpStatus.OK);
     }
     /*////to retrieve the cours with an INTITULE,CODE send---------------------------------------------------
@@ -55,46 +55,46 @@ public class RestClasse
         Cours c = ics.read(code,intitule);
         return new ResponseEntity<>(c, HttpStatus.OK);
     }*/
-    //create a cours
+    //create a Classe
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<Cours> createCours(@RequestBody Cours c) throws Exception {
-        System.out.println("Création du cours " + c.getIntitule());
+    public ResponseEntity<Classe> createClasse(@RequestBody Classe c) throws Exception {
+        System.out.println("Création de Classe " + c.getSigle());
         ics.create(c);
         return new ResponseEntity<>(c, HttpStatus.OK);
     }
 
-    //update a cours via ID
+    //update a Classe via ID
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Cours> majCours(@PathVariable(value = "id") int id,@RequestBody Cours nouvc) throws Exception{
-        System.out.println("maj du cours id =  " + id);
-        nouvc.setIdcours(id);
-        Cours c = ics.update(nouvc);
+    public ResponseEntity<Classe> majClasse(@PathVariable(value = "id") int id,@RequestBody Classe nouvc) throws Exception{
+        System.out.println("maj de Classe id =  " + id);
+        nouvc.setId(id);
+        Classe c = ics.update(nouvc);
         return new ResponseEntity<>(c, HttpStatus.OK);
     }
 
-    //delete a cours via ID
+    //delete a Classe via ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Void> deleteCours(@PathVariable(value = "id") int id) throws Exception{
-        System.out.println("effacement du cours d'id " + id);
-        Cours c = ics.read(id);
+    public ResponseEntity<Void> deleteClasse(@PathVariable(value = "id") int id) throws Exception{
+        System.out.println("effacement de Classe d'id " + id);
+        Classe c = ics.read(id);
         ics.delete(c);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    //-------------------Retrouver tous les clients --------------------------------------------------------
+    //return all classe
     @RequestMapping(value =  "/all",method = RequestMethod.GET)
-    public ResponseEntity<List<Cours>> listCours() throws Exception{
-        System.out.println("recherche de tous les Cours");
+    public ResponseEntity<List<Classe>> listClasse() throws Exception{
+        System.out.println("recherche de tous les Classes");
         return new ResponseEntity<>(ics.all(), HttpStatus.OK);
     }
 
-    //-------------------Retrouver tous les clients triés et par page--------------------------------------------------------
+    //return all classe sorted
     @RequestMapping(value =  "/allp",method = RequestMethod.GET)
-    public ResponseEntity<Page<Cours>> listCours(Pageable pageable) throws Exception{
-        System.out.println("recherche de tous les Cours");
+    public ResponseEntity<Page<Classe>> listClasse(Pageable pageable) throws Exception{
+        System.out.println("recherche de tous les Classes");
         return new ResponseEntity<>(ics.allp(pageable), HttpStatus.OK);
     }
-    //-------------------Gérer les erreurs--------------------------------------------------------
+    //managing Exception
     @ExceptionHandler({Exception.class})
     public ResponseEntity<Void>  handleIOException(Exception ex) {
         System.out.println("erreur : "+ex.getMessage());

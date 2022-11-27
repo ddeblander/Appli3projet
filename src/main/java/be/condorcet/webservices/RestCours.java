@@ -68,20 +68,20 @@ public class RestCours
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    //-------------------Retrouver tous les clients --------------------------------------------------------
+    //retrieve all cours
     @RequestMapping(value =  "/all",method = RequestMethod.GET)
     public ResponseEntity<List<Cours>> listCours() throws Exception{
         System.out.println("recherche de tous les Cours");
         return new ResponseEntity<>(ics.all(), HttpStatus.OK);
     }
 
-    //-------------------Retrouver tous les clients triés et par page--------------------------------------------------------
+    //retrieve all cours sorted
     @RequestMapping(value =  "/allp",method = RequestMethod.GET)
     public ResponseEntity<Page<Cours>> listCours(Pageable pageable) throws Exception{
         System.out.println("recherche de tous les Cours");
         return new ResponseEntity<>(ics.allp(pageable), HttpStatus.OK);
     }
-    //-------------------Gérer les erreurs--------------------------------------------------------
+    //error manager
     @ExceptionHandler({Exception.class})
     public ResponseEntity<Void>  handleIOException(Exception ex) {
         System.out.println("erreur : "+ex.getMessage());
