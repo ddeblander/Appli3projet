@@ -23,13 +23,13 @@ public class RestSalle
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Salle> getClasse(@PathVariable(value = "id")int id) throws Exception
     {
-        System.out.println("recherche du d'une Salle d' id " + id);
+        System.out.println("recherche d'une Salle d' id " + id);
         Salle s = ISS.read(id);
         return new ResponseEntity<Salle>(s, HttpStatus.OK);
     }
     //to retrieve the Salle with an sigle send
     @RequestMapping(value = "/sigle={sigle}", method = RequestMethod.GET)
-    public ResponseEntity<List<Salle>> listClassesNom(@PathVariable(value="nom") String sigle) throws Exception{
+    public ResponseEntity<List<Salle>> listClassesNom(@PathVariable(value="sigle") String sigle) throws Exception{
         System.out.println("recherche de "+sigle);
         List<Salle> Salles;
         Salles = ISS.read(sigle);
@@ -46,7 +46,7 @@ public class RestSalle
     //create a Salle
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<Salle> createClasse(@RequestBody Salle s) throws Exception {
-        System.out.println("Création de Classe " + s.getSigle());
+        System.out.println("Création d'une salle " + s.getSigle());
         ISS.create(s);
         return new ResponseEntity<>(s, HttpStatus.OK);
     }
@@ -54,7 +54,7 @@ public class RestSalle
     //update a Salle via ID
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Salle> majClasse(@PathVariable(value = "id") int id,@RequestBody Salle nouvs) throws Exception{
-        System.out.println("maj de Classe id =  " + id);
+        System.out.println("maj de salle id =  " + id);
         nouvs.setId(id);
         Salle s = ISS.update(nouvs);
         return new ResponseEntity<>(s, HttpStatus.OK);
@@ -63,7 +63,7 @@ public class RestSalle
     //delete a Salle via ID
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteClasse(@PathVariable(value = "id") int id) throws Exception{
-        System.out.println("effacement de Classe d'id " + id);
+        System.out.println("effacement de salle d'id " + id);
         Salle s = ISS.read(id);
         ISS.delete(s);
         return new ResponseEntity<>(HttpStatus.OK);

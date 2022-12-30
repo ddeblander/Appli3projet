@@ -28,10 +28,10 @@ public class RestCours
     }
     //to retrieve the cours with an INTITULE send
     @RequestMapping(value = "/intitule={intitule}", method = RequestMethod.GET)
-    public ResponseEntity<List<Cours>> listCourssNom(@PathVariable(value="nom") String nom) throws Exception{
-        System.out.println("recherche de "+nom);
+    public ResponseEntity<List<Cours>> listCourssNom(@PathVariable(value="intitule") String intitule) throws Exception{
+        System.out.println("recherche de "+intitule);
         List<Cours> cours;
-        cours = ics.read(nom);
+        cours = ics.read(intitule);
         return new ResponseEntity<>(cours, HttpStatus.OK);
     }
     /*////to retrieve the cours with an INTITULE,CODE send---------------------------------------------------
