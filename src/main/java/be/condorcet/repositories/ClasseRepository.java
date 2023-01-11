@@ -13,4 +13,6 @@ public interface ClasseRepository extends JpaRepository<Classe,Integer> {
     public List<Classe> findBySigleLike(String sigle);
 
     public Classe findByIdAndSigleLike(int id,String sigle);
+
+    public List<Classe> findBySpecialiteLike(String specialite);
 }

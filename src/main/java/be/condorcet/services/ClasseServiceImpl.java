@@ -30,6 +30,11 @@ public class ClasseServiceImpl implements InterfClasseService
     }
 
     @Override
+    public List<Classe> readS(String specialite) {
+        return classeRepository.findBySpecialiteLike(specialite+"%");
+    }
+
+    @Override
     public Classe create(Classe classe) throws Exception {
         classeRepository.save(classe);
         return classe;

@@ -19,7 +19,8 @@ public class GestClasse
     private ClasseServiceImpl classeServiceImpl;
 
     @RequestMapping("/tous")
-    public String seeAll(Map<String, Object> model) {
+    public String seeAll(Map<String, Object> model)
+    {
         try {
             Classe c = new Classe();
             Collection<Classe> classes = classeServiceImpl.all();
@@ -30,6 +31,23 @@ public class GestClasse
             return "error";
         }
         return "affichageToutClasse";
+    }
+    @RequestMapping("/readS")
+    public String readS ( @RequestParam String specialite, Map<String, Object > model)
+    {
+        {
+            System.out.println("recherche d'une classe avec specialite : " + specialite);
+            try {
+                Classe c = new Classe();
+                Collection<Classe> classes = classeServiceImpl.readS(specialite);
+                model.put("mesClassesSpecialite", classes);
+            } catch (Exception e) {
+                System.out.println("error during the search " + e);
+                model.put("error", e.getMessage());
+                return "error";
+            }
+            return "affichageCLasseSpecialite";
+        }
     }
     @RequestMapping("/read")
     public String read(@RequestParam int idClasse, Map<String, Object> model){

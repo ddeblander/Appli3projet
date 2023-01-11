@@ -11,4 +11,6 @@ public interface InterfClasseService  extends InterfService<Classe>
 
     public Classe read(int id, String sigle);
 
+    public List<Classe> readS(String specialite);
+
 }

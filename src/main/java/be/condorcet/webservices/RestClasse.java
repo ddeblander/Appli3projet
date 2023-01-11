@@ -47,6 +47,13 @@ public class RestClasse
         classes = ics.read(sigle);
         return new ResponseEntity<>(classes, HttpStatus.OK);
     }
+    @RequestMapping(value = "/specialite={specialite}", method = RequestMethod.GET)
+    public ResponseEntity<List<Classe>> listClassesSpecialite(@PathVariable(value="specialite") String specialite) throws Exception{
+        System.out.println("recherche de "+specialite);
+        List<Classe> classes;
+        classes = ics.readS(specialite);
+        return new ResponseEntity<>(classes, HttpStatus.OK);
+    }
     /*////to retrieve the cours with an INTITULE,CODE send---------------------------------------------------
     @RequestMapping(value = "/{code}/{intitule}}", method = RequestMethod.GET)
     public ResponseEntity<Cours> getCoursUnique(@PathVariable(value = "CODE") String code,
